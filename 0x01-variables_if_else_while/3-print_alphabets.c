@@ -10,13 +10,13 @@ int main(void)
 {
 	int p;
 
-	for (p = 'a'; p <= 'z'; p++)
-	{
-		putchar(islower(p));
-	}
 	for (p = 'A'; p <= 'Z'; p++)
 	{
-		putchar(isupper(p));
+		putchar(tolower(p));
+	}
+	for (p = 'a'; p <= 'z'; p++)
+	{
+		putchar(toupper(p));
 	}
 	{
 		putchar('\n');
