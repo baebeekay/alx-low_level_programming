@@ -13,6 +13,8 @@ int main(void)
 	for (y = 'A'; y <= 'Z'; y++)
 	{
 		putchar(tolower(y));
+	}
+	{
 		putchar('\n');
 	}
 
