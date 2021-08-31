@@ -1,6 +1,7 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+void times_table(void);
 void jack_bauer(void);
 void print_alphabet_x10(void);
 void print_alphabet(void);
