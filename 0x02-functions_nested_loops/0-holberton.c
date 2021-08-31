@@ -7,13 +7,14 @@
  */
 int main(void)
 {
-	char *c = "_putchar";
+	char c[8] = "_putchar";
 	int n;
 
 	for (n = 0; n < 9; n++)
 	{
 		_putchar(c[n]);
 	}
+	_putchar('\n');
 
 	return (0);
 }
