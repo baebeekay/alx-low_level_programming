@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * main - prints Holberton
+ * main - prints _putchar
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	char *c = "Holberton";
+	char *c = "_putchar";
 	int n;
 
 	for (n = 0; n < 10; n++)
