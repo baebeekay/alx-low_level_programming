@@ -11,7 +11,7 @@ int main(void)
 	int num2 = 2;
 	int n, x;
 
-	for (n = 1; n < 52; n++)
+	for (n = 1; n < 48; n++)
 	{
 		printf("%d ,", num1);
 		x = num1 + num2;
