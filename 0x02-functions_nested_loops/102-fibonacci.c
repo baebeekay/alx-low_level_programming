@@ -11,10 +11,10 @@ int main(void)
 	int num2 = 2;
 	int n, x;
 
-	for (n = 0; n <= 50; n++)
+	for (n = 1; n < 50; n++)
 	{
+		printf("%d ,", num1);
 		x = num1 + num2;
-		printf(", %d", x);
 		num1 = num2;
 		num2 = x;
 	}
