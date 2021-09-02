@@ -1,1 +1,3 @@
-# PROJECT 0x00. C - Hello, World
+# PROJECT C
+## Using betty doc style and coding style
+### For ALX 
