@@ -2,7 +2,7 @@
 
 /**
  * reset_to_98 - Entry point
- * @*n: input integer
+ * @n: input integer
  * Return: void
  */
 void reset_to_98(int *n)
