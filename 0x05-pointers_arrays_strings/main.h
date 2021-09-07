@@ -10,7 +10,7 @@ void _puts(char *str);
 void swap_int(int *a, int *b);
 void puts2(char *str);
 void print_rev(char *s);
-
+void print_array(int *a, int n);
 void puts_half(char *str);
 
 
