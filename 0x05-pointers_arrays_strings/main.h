@@ -2,6 +2,7 @@
 #define _MAIN_H
 
 
+int _atoi(char *s);
 int _putchar(char c);
 int _strlen(char *s);
 void rev_string(char *s);
