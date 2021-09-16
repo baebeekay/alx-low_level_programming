@@ -13,7 +13,7 @@ int is_palindrome(char *s)
 
 	if (n == 0)
 		return (1);
-	return pal_check(s, 0, n - 1);
+	return (pal_check(s, 0, n - 1));
 }
 
 /**
@@ -25,19 +25,19 @@ int is_palindrome(char *s)
  */
 int pal_check(char *c, int i, int j)
 {
-    if (*c == 0)
-    {
-	    return (1);
-    }
-    if (c[i] != c[j])
-	    return (0);
-    if (i >= j)
-	    return (1);
-    return pal_check(c, i + 1, j - 1);
+	if (*c == 0)
+	{
+		return (1);
+	}
+	if (c[i] != c[j])
+		return (0);
+	if (i >= j)
+		return (1);
+	return (pal_check(c, i + 1, j - 1));
 }
 /**
  * _strlen - checks the lenght of a string
- * @i: pointer to a string
+ * @l: pointer to a string
  * Return: lenght of a string
  */
 int _strlen(char *l)
