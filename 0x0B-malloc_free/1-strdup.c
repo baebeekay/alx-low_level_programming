@@ -11,51 +11,29 @@ char *_memcpy(char *dest, char *src, unsigned int n);
  */
 char *_strdup(char *str)
 {
-	unsigned int len = (_strlen(str) + 1);
-	char *p = malloc(len);
+	unsigned int i, j, len = 0;
+	char *p;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	_memcpy(p, str, len);
 
+	for (j = 0; str[j] != '\0'; j++)
+	{
+		len++;
+	}
+	len++;
+	p = malloc(len * sizeof(char));
+
+	if (p == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0; i < len; i++)
+	{
+		p[i] = str[i];
+	}
 	return (p);
-}
 
-/**
- * _strlen - gets the lenght of a string
- * @c: string
- * Return: lenght of c
- */
-int _strlen(char *c)
-{
-	int i = 0;
-
-	while (*c != '\0')
-	{
-		i++;
-		c++;
-	}
-	return (i);
-}
-
-
-/**
- * *_memcpy - copys the memory area
- * @dest: A pointer memory to be copied to
- * @src: The pointer memory to be copied from.
- * @n: The number of bytes to be filled.
- * Return: dest
- */
-char *_memcpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int x;
-
-	for (x = 0; x < n; x++)
-	{
-		dest[x] = src[x];
-	}
-
-	return (dest);
 }
