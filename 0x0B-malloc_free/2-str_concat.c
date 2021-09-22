@@ -10,19 +10,15 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *p;
-	unsigned int a, b, n, x, sumlen;
+	unsigned int a, b, x, n, sumlen;
 	unsigned int len1 = 0, len2 = 0;
 
 	if (s1 == NULL)
-	{
 		s1 = "";
-	}
 	for (a = 0; *(s1 + a); a++)
 		len1++;
 	if (s2 == NULL)
-	{
-		s1 = "";
-	}
+		s2 = "";
 	for (b = 0; *(s2 + b); b++)
 		len2++;
 	sumlen = len1 + len2 + 1;
