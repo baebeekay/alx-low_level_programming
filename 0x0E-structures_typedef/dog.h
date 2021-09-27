@@ -1,0 +1,18 @@
+#ifndef _DOG_H
+#define _DOG_H
+
+/**
+ * struct dog - entry point
+ * @name: dog's name
+ * @age: dog's age
+ * @owner: dog's owner
+ */
+
+typedef struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+} dog;
+
+#endif
