@@ -7,6 +7,11 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	if (name && f)
-		f(name);
+	if (name)
+	{
+		if (f)
+		{
+			(*f)(name);
+		}
+	}
 }
