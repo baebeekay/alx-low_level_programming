@@ -7,16 +7,22 @@
  */
 int main(void)
 {
-	int num1 = 1;
-	int num2 = 2;
-	int n, x;
+	long long int num1 = 1;
+	long long int num2 = 2;
+	int i;
+	long long int x;
 
-	for (n = 3; n <= 47; n++)
+	printf("%lld, %lld, ", num1, num2);
+	for (i = 0; i < 48; i++)
 	{
-		printf("%d ,", num1);
 		x = num1 + num2;
+		printf("%lld", x);
 		num1 = num2;
 		num2 = x;
+		if (i < 47)
+		{
+			printf(", ");
+		}
 	}
 	printf("\n");
 	return (0);
