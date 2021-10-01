@@ -7,16 +7,22 @@
  */
 int main(void)
 {
-	int n1 = 1;
-	int n2 = 2;
-	int y, z;
+	long int n1 = 1;
+	long int n2 = 2;
+	int y;
+	long int z;
 
-	for (y = 1; y <= 98; y++)
+	printf("%lu, %lu, ", n1, n2);
+	for (y = 0; y <= 97; y++)
 	{
-		printf("%d ,", n1);
-		z = n2 + n1;
+		z = n1 + n2;
+		printf("%lu", z);
 		n1 = n2;
 		n2 = z;
+		if (y < 97)
+		{
+			printf(", ");
+		}
 	}
 	printf("\n");
 	return (0);
