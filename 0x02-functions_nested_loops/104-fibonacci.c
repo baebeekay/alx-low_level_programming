@@ -12,7 +12,6 @@ int main(void)
 	int y;
 	long int z;
 
-	printf("%lu, %lu, ", n1, n2);
 	for (y = 0; y < 98; y++)
 	{
 		z = n1 + n2;
