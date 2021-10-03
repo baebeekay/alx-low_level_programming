@@ -9,20 +9,20 @@ int main(void)
 {
 	long int n1 = 1;
 	long int n2 = 2;
-	int y = 0;
+	int y;
 	long int z;
 
-	while (y < 98)
+	printf("%lu, %lu, ", n1, n2);
+	for (y = 0; y <= 85; y++)
 	{
 		z = n1 + n2;
+		printf("%lu", z);
 		n1 = n2;
 		n2 = z;
-		printf("%lu", z);
-		if (y < 97)
+		if (y < 85)
 		{
 			printf(", ");
 		}
-		y++;
 	}
 	printf("\n");
 	return (0);
