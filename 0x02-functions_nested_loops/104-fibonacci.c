@@ -13,13 +13,13 @@ int main(void)
 	long int z;
 
 	printf("%lu, %lu, ", n1, n2);
-	for (y = 0; y <= 97; y++)
+	for (y = 0; y <= 95; y++)
 	{
 		z = n1 + n2;
-		printf("%lu", z);
 		n1 = n2;
 		n2 = z;
-		if (y < 97)
+		printf("%lu", z);
+		if (y < 95)
 		{
 			printf(", ");
 		}
