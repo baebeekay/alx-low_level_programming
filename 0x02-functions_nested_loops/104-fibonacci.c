@@ -9,10 +9,10 @@ int main(void)
 {
 	long int n1 = 1;
 	long int n2 = 2;
-	int y;
+	int y = 0;
 	long int z;
 
-	for (y = 0; y < 98; y++)
+	while (y < 98)
 	{
 		z = n1 + n2;
 		n1 = n2;
@@ -22,6 +22,7 @@ int main(void)
 		{
 			printf(", ");
 		}
+		y++;
 	}
 	printf("\n");
 	return (0);
