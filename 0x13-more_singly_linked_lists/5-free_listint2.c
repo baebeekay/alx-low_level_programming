@@ -1,0 +1,20 @@
+#include "lists.h"
+#include <stdlib.h>
+
+/**
+ * free_listint2 - frees memory in listint_t
+ * @head: pointer to elements
+ */
+void free_listint2(listint_t **head)
+{
+	listint_t *node;
+
+	if (head == NULL)
+		return;
+	while (*head != NULL)
+	{
+		node = (*head)->next;
+		free(*head);
+		*head = node;
+	}
+}
