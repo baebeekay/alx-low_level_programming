@@ -1,6 +1,6 @@
 #include "lists.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  * print_listint_safe - prints elements in a list
  * @head: pointer to elements
@@ -11,7 +11,7 @@ size_t print_listint_safe(const listint_t *head)
 	unsigned int i = 0;
 
 	if (head == NULL)
-		return (0);
+		exit(98);
 	while (head != NULL)
 	{
 		i++;
