@@ -1,6 +1,6 @@
 #include "lists.h"
 #include <stdio.h>
-#include <stdlib.h>
+
 /**
  * print_listint_safe - prints elements in a list
  * @head: pointer to elements
