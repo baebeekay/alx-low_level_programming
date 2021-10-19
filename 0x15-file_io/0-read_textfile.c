@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include <stddef.h>
+#include <sys/types.h>
 
 /**
  * read_textfile - reads a text file and
