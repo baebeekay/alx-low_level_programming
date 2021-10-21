@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stddef.h>
 
+#define BUFSIZE 1024
+#define PERM 0664
 
 int _putchar(char c);
 ssize_t read_textfile(const char *filename, size_t letters);
