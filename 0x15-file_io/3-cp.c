@@ -1,7 +1,12 @@
 #include "main.h"
 
-void error(char* s);
-
+void error(char *s);
+/**
+ * main - Entry point
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0(success)
+ */
 int main(int argc, char *argv[])
 {
 	int file_to, file_from, FD_VALUE;
@@ -34,9 +39,8 @@ int main(int argc, char *argv[])
 	return (0);
 }
 /**
- *
- *
- *
+ * error - prints an error string
+ * @s: string to print
  */
 void error(char *s)
 {
