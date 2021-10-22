@@ -36,29 +36,22 @@ int main(int argc, char *argv[])
 	}
 	do {
 		numR = read(file_from, buf, BUFSIZE);
-		if (numR < 0)
+		if (numR == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
-			exit(98);
+			break;
 		}
 		numW = write(file_to, buf, numR);
 		if (numW < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
-			exit(99);
-		}
+			break;
+		};
 	} while (numR == BUFSIZE);
-
-	if (close(file_from) == -1)
+	if (close(file_from) || close(file_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
-	if (close(file_to) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
-		exit(100);
-	}
-
-		return (0);
+	return (0);
 }
