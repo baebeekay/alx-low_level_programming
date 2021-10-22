@@ -38,16 +38,11 @@ int main(int argc, char *argv[])
 	{
 		if (write(file_to, buf, n) != n)
 		{
-			printf("Error\n");
-			exit(99);
+			printf("Error: Can't close fd %d\n", n);
+			exit(100);
 		}
 	}
 		close(file_to);
 		close(file_from);
-		if ((close(file_to) || close(file_from)) != 0)
-		{
-			printf("Error: Can't close fd -1\n");
-			exit(100);
-		}
 		return (0);
 }
