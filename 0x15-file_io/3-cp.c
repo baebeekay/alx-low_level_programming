@@ -36,13 +36,13 @@ int main(int argc, char *argv[])
 	}
 	do {
 		numR = read(file_from, buf, BUFSIZE);
-		if (numR <= 0)
+		if (numR == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
 			break;
 		}
 		numW = write(file_to, buf, numR);
-		if (numW <= 0)
+		if (numW == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
 			break;
