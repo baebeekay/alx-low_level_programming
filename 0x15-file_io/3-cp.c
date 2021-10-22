@@ -40,13 +40,13 @@ int main(int argc, char *argv[])
 		{
 			dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
 			break;
-		}
+		} return (0);
 		numW = write(file_to, buf, numR);
 		if (numW == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
 			break;
-		};
+		} return (0);
 	} while (numR == BUFSIZE);
 	if (close(file_from) || close(file_to) == -1)
 	{
