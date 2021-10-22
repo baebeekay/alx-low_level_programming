@@ -34,8 +34,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while (1)
-	{
+	do {
 		numR = read(file_from, buf, BUFSIZE);
 		if (numR == -1)
 		{
@@ -48,7 +47,7 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
 			exit(99);
 		}
-	}
+	} while (numR == BUFSIZE);
 
 	if (close(file_from) == -1)
 	{
