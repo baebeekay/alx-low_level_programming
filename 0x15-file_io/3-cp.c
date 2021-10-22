@@ -5,7 +5,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
-void _close(int file);
+
 /**
  * main - Entry point
  * @argc: argument count
@@ -43,24 +43,5 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	_close(file_from);
-	_close(file_to);
-
 	return (0);
-}
-
-/**
- * _close - closes a file
- * @file: to close
- */
-void _close(int file)
-{
-	int err;
-
-	err = close(file);
-	if (err == -1)
-	{
-		printf("Error: Can't close fd %d\n", file);
-		exit(100);
-	}
 }
