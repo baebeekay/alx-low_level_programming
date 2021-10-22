@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
 			break;
 		}
-	} while (1);
+	} while (numR == BUFSIZE);
 	if (close(file_from) || close(file_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
