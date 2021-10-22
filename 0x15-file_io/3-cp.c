@@ -42,6 +42,8 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
+		close(file_to);
+		close(file_from);
 
 	return (0);
 }
