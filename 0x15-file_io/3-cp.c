@@ -5,7 +5,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
-void _close(int file);
+
 /**
  * main - Entry point
  * @argc: argument count
@@ -34,7 +34,8 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	do {
+	while (1)
+	{
 		numR = read(file_from, buf, BUFSIZE);
 		if (numR == -1)
 		{
@@ -47,25 +48,18 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
 			exit(99);
 		}
-	} while (numR == BUFSIZE);
-		_close(file_from);
-		_close(file_to);
+	}
 
-		return (0);
-}
-
-/**
- * _close - closes a file
- * @file: file to close
- */
-void _close(int file)
-{
-	int err;
-
-	err = close(file);
-	if (err == -1)
+	if (close(file_from) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
+	if (close(file_to) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
+		exit(100);
+	}
+
+		return (0);
 }
