@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_WRONLY | O_CREAT, PERM);
 	if (file_to == -1)
 	{
-		printf("Error: Can't write to %s", argv[2]);
+		printf("Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	while ((FD_VALUE = read(file_from, buf, BUFSIZE)) > 0)
