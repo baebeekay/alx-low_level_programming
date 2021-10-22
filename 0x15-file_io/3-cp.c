@@ -14,7 +14,7 @@ void _close(int file);
  */
 int main(int argc, char *argv[])
 {
-	int file_to, file_from, n;
+	int file_to, file_from, numR, numW;
 	char buf[BUFSIZE];
 
 	if (argc != 3)
@@ -34,15 +34,40 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while ((n = read(file_from, buf, BUFSIZE)) > 0)
+	do
 	{
-		if (write(file_to, buf, n) != n)
+		numR = read(file_from, buf, BUFSIZE);
+		if (numR == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", n);
-			exit(100);
+			dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		numW = write(file_to, buf, BUFSIZE);
+		if (numW == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
+			exit(99);
 		}
 	}
-		close(file_to);
-		close(file_from);
+	while (numR == BUFSIZE);
+		_close(file_from);
+		_close(file_to);
+
 		return (0);
+}
+
+/**
+ * _close - closes a file
+ * @file: file to close
+ */
+void _close(int file)
+{
+	int err;
+
+	err = close(file);
+	if (err == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", file);
+		exit(100);
+	}
 }
